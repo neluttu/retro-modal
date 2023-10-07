@@ -66,7 +66,7 @@
         </div>
     </header>
     <div id="modal" class="fixed inset-0 z-50 flex items-center justify-center modal bg-black/90">
-        <div class="p-4 bg-[#181028] rounded-lg w-full max-w-[640px] shadow-[0px_5px_28px_12px_rgba(108,72,180,0.20)] mx-4">
+        <div class="p-4 bg-[#181028] border border-[#24183a] rounded-lg w-full max-w-[640px] shadow-[0px_5px_28px_12px_rgba(108,72,180,0.20)] mx-4">
             
             <h2 class="flex items-center justify-between text-[#e32a77] w-full border-b-purple-600/10 border-b-[1px] pb-4">
                 <span class="text-2xl font-normal text-white grow">Confirm</span>
@@ -88,33 +88,22 @@
                     <p class="text-white/50">Press OK to continue, or Cancel to stay on the current page.</p>
             </div>
             <div class="flex items-center justify-center w-full gap-5 mb-10">
-                <button class="order-1 px-10 py-3 rounded-lg bg-gradient-to-br from-[#8961df] to-[#4f299f]" id="confirm">
+                <button class="px-10 py-3 rounded-lg bg-gradient-to-br from-[#8961df] to-[#4f299f]" id="confirm">
                     OK
                 </button>
-                <button class="order-1 px-10 py-3 rounded-lg bg-gradient-to-br from-[#e32a77] to-[#a81150]" id="infirm">
+                <button class="px-10 py-3 rounded-lg bg-gradient-to-br from-[#e32a77] to-[#a81150]" id="infirm">
                     Cancel
                 </button>
             </div>
         </div>
     </div>
     <script>
-        const confirmButton = document.getElementById("confirm");
-        const infirmButton = document.getElementById("infirm");
-
-        confirmButton.addEventListener("mouseenter", function () {
-            confirmButton.classList.remove("order-1");
-            confirmButton.classList.add("order-2");
-        });
-
-        confirmButton.addEventListener("mouseleave", function () {
-            confirmButton.classList.remove("order-2");
-            confirmButton.classList.add("order-1");
-        });
-    
+        
         document.addEventListener("DOMContentLoaded", function () {
             const modalLink = document.getElementById("modal_link");
             const modal = document.getElementById("modal");
             const closeModalButton = document.getElementById("close-modal");
+            const infirmButton = document.getElementById("infirm");
 
             modalLink.addEventListener("click", function (e) {
                 e.preventDefault();
